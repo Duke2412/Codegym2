@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thực hành toán tử 3 ngôi</title>
+</head>
+<body>
+<button type="button" onclick="B1">Bài 1</button><br><br>
+<button type="button" onclick="B2">Bài 2</button>
+<script>
+    function B1() {
+        let a = prompt("a: ");
+        let b = prompt("b: ");
+        result = (a + b < 4) ? 'Below' : 'Over';
+        alert(result)
+    }
+function B2() {
+    let login = prompt('Login = ');
+    let message = (login == 'Employee') ?
+        'Hello' :
+        (login == 'Director') ?
+            'Greetings' :
+            (login == '') ?
+                'No login' :
+                '';
+    alert(message);
+}
+</script>
+</body>
+</html>

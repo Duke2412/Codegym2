@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thực hành While</title>
+</head>
+<body>
+<input type="button" value="Bài thực hành 1" onclick="thuchanh1()">
+<input type="button" value="Bài thực hành 2" onclick="thuchanh2()">
+<script>
+    function thuchanh1() {
+        let num = prompt('Nhập vào 1 số: ');
+        let total = 0;
+        while (num != -1) {
+            num = prompt('Nhập vào 1 số: ')
+            alert(total += +num)
+        }
+    }
+    function thuchanh2() {
+        let i = 1;
+        while (i < 100) {
+            document.write("<hr width =" + i + "%>")
+            i++
+        }
+    }
+</script>
+</body>
+</html>

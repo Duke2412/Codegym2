@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hiển thị số nguyên tố</title>
+</head>
+<body>
+<script>
+    function check(a) {
+        let kt = true;
+        for (let i=2;i<=Math.sqrt(a);i++){
+            if (a%i==0) {
+                kt = false;
+                break;
+            }
+        }
+        return kt;
+    }
+        let numbers = parseInt(prompt('Nhập số nguyên tố cần in: '));
+        let result ="<p> ";
+        let count = 0;
+        let N = 2;
+        while (count<numbers){
+            if (check(N)) {
+                result=result+N+' ';
+                count++;
+                if (count%20==0) result+='<br>'
+            }
+            N++;
+        }
+        result=result+'</p>';
+        document.write(result);
+</script>
+</body>
+</html>

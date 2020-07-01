@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="circle" width="620" height="420" style="border: 1px solid black" ></canvas>
+<script>
+
+    //Câu 1
+    function findMax(arr) {
+        let max=arr[0];
+        for (let i=1;i<arr.length;i++){
+            if (max<arr[i]){
+                max=arr[i];
+            }
+        }return max;
+    }
+    let b=findMax([100,1005,2000,2005]);
+    console.log(b);
+
+    //Câu 2
+    function tryRemoveFromArray(arr,x) {
+        for(let i = 0; i < arr.length; i++){
+            if ( x === arr[i]){
+                let j = arr.indexOf(x);
+                arr.splice(j,1);
+            }
+        }
+        return arr;
+    }
+    let a = tryRemoveFromArray([5,4,9,5,4,5,3],5);
+    console.log(a);
+
+    //Câu 3
+    function isFibonacci(num) {
+        let fib = [0,1];
+        for (let i=0; i<1475; i++ ) {
+            fib.push(fib[i]+fib[i+1]);
+        }
+        if (fib.indexOf(num)!=-1) {
+            return "yes";
+        }
+        else {
+            return "no";
+        }
+    }
+    console.log(isFibonacci(610));
+
+    //Câu 4
+    function Circle(x,y,radius,color) {
+        this.x = x;
+        this.y = y;
+        this.radius = radius;
+        this.color = color;
+        this.render  = function () {
+            let ctr = document.getElementById("circle").getContext("2d");
+            ctr.beginPath();
+            ctr.arc(this.x,this.y,this.radius,0,2*Math.PI);
+            ctr.fill();
+            ctr.fillStyle = this.color;
+            ctr.stroke();
+            ctr.closePath();
+        }
+    }
+    let crircle = new Circle(10,10,100,"#000000");
+    crircle.render();
+
+</script>
+</body>
+</html>
